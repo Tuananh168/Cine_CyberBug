@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "../page/home/Home";
+import Footer from "./footer/Footer";
 import Header from "./header/Header";
 
 const MainLayout = () => {
@@ -12,6 +13,7 @@ const MainLayout = () => {
           <Route path="/" element={<Home />} />
         </Routes>
       </div>
+      <Footer />
     </div>
   );
 };
