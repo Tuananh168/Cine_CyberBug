@@ -26,7 +26,6 @@ const HomeCarousel = () => {
 
   const renderCarousel = () => {
     return listBanner.map((item, index) => {
-      console.log("item", item);
       return (
         <>
           <div

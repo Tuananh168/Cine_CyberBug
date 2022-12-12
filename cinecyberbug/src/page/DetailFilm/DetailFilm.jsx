@@ -32,9 +32,12 @@ const DetailFilm = () => {
         backgroundSize: "100%",
         backgroundPosition: "center",
       }}
-      className="bg-no-repeat w-full"
+      className="bg-no-repeat w-full "
     >
-      <>
+      <div
+        className="pt-[12%] backdrop-blur-sm"
+        style={{ minHeight: "100vh", width: "100%" }}
+      >
         <div className="grid grid-cols-12">
           <div className="col-span-3 col-start-3">
             <img
@@ -78,7 +81,7 @@ const DetailFilm = () => {
           </div>
         </div>
         <div
-          className="mt-[100px] w-2/3 mx-auto rounded-lg bg-white"
+          className="mt-[15%] w-2/3 mx-auto rounded-lg bg-white"
           style={{ minHeight: 500 }}
         >
           <Tabs tabPosition={"top"}>
@@ -116,12 +119,14 @@ const DetailFilm = () => {
                               />
                               <div className="leading-[2px]">
                                 <h2
-                                  className="text-xl font-bold text-left"
+                                  className="text-xl font-bold text-left "
                                   key={index}
                                 >
                                   {cumRap.tenCumRap}
                                 </h2>
-                                <p style={{ fontSize: 12 }}>{cumRap.diaChi}</p>
+                                <p style={{ fontSize: 12 }} className="mt-2">
+                                  {cumRap.diaChi}
+                                </p>
                               </div>
                             </div>
                             <div className="grid grid-cols-4 mt-2">
@@ -162,7 +167,7 @@ const DetailFilm = () => {
             </TabPane>
           </Tabs>
         </div>
-      </>
+      </div>
     </div>
   );
 };

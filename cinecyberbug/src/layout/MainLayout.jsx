@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import Checkout from "../page/Checkout/Checkout";
 import DetailFilm from "../page/DetailFilm/DetailFilm";
 import Home from "../page/home/Home";
 import Footer from "./footer/Footer";
@@ -13,6 +14,7 @@ const MainLayout = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/detail/:id" element={<DetailFilm />} />
+          <Route path="/checkout/:id" element={<Checkout />} />
         </Routes>
       </div>
       <Footer />
