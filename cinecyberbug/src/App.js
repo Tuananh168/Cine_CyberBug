@@ -1,9 +1,12 @@
+import Header from "./layout/header/Header";
+import Router from "./Router/Router";
 
 
 function App() {
   return (
-    <div className="App">
-      Trần Lê Tuấn Anh
+    <div>
+      <Router />
+      <Header />
     </div>
   );
 }
