@@ -4,6 +4,8 @@ import { NavLink, useNavigate } from "react-router-dom";
 import _ from "lodash";
 import { Drawer, Space, Tabs } from "antd";
 import { ACCESSTOKEN, USER_LOGIN } from "../../utils/setting/Config";
+import Register from "../../page/register/Register";
+import Login from "../../page/login/Login";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -102,11 +104,11 @@ const Header = () => {
           <Drawer placement="right" width={500} onClose={onClose} open={open}>
             <Tabs tabPosition={"top"} tabBarStyle={tabStyle}>
               <TabPane key={"1"} tab={<div>Đăng Nhập</div>}>
-                {/* <Login /> */}
+                <Login />
               </TabPane>
 
               <TabPane key={"2"} tab={<div>Đăng ký</div>}>
-                {/* <Register /> */}
+                <Register />
               </TabPane>
             </Tabs>
           </Drawer>

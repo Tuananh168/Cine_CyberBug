@@ -12,7 +12,7 @@ if (localStorage.getItem(USER_LOGIN)) {
 
 const initialState = {
   dangKyTaiKhoan: [],
-  userLogin: user,
+  userLogin: {},
 };
 
 export const dangKyTaiKhoanReducer = (state = initialState, action) => {

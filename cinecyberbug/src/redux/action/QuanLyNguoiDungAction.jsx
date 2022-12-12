@@ -1,5 +1,5 @@
 import { quanLyNguoiDungService } from "../../service/QuanLyNguoiDungServices";
-import { notifiFuntion } from "../../util/notification/Notification";
+import { notifiFuntion } from "../../utils/notification/Notification";
 import {
   DANG_KY_ACTION,
   DANG_NHAP_ACTION,
