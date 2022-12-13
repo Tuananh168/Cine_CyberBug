@@ -10,7 +10,7 @@ const Film = (props) => {
 
   return (
     <div className="card-main container">
-      <div class="card">
+      <div class="card ">
         <div class="card-header">
           <img src={phim.hinhAnh} alt={phim.hinhAnh} />
         </div>

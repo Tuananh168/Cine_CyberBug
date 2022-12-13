@@ -123,7 +123,7 @@ const HomeMenu = () => {
   };
   return (
     <div
-      className="mx-36"
+      className="mx-36 mt-[3%]"
       style={{ boxShadow: "0 35px 60px -15px rgba(0, 0, 0, 0.5)" }}
     >
       <Tabs tabPosition={tabPosition}>{renderHeThongRap()}</Tabs>

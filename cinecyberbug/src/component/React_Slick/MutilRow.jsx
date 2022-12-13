@@ -39,7 +39,6 @@ const MutilRow = () => {
   const { arrPhim, dangChieu, sapChieu } = useSelector(
     (state) => state.quanLyPhimReducer
   );
-  console.log("arrPhim: ", arrPhim);
 
   const settings = {
     className: "center variable-width",
@@ -74,7 +73,7 @@ const MutilRow = () => {
     <div className="bg-orange-400">
       <div className="text-center">
         <button
-          className={`${styleSlick[classNameDC]} px-8 py-3 font-semibold rounded bg-gray-500 text-white border-gray-900 mr-2`}
+          className={`${styleSlick[classNameDC]} px-8 py-3 font-semibold rounded bg-gray-500 text-white border-gray-900 mr-2  mt-[2%]`}
           onClick={() => {
             const action = { type: SET_PHIM_DANG_CHIEU };
             dispatch(action);
@@ -83,7 +82,7 @@ const MutilRow = () => {
           Đang chiếu
         </button>
         <button
-          className={`${styleSlick[classNameSC]} px-8 py-3 font-semibold rounded bg-gray-500 text-white border-gray-900`}
+          className={`${styleSlick[classNameSC]} px-8 py-3 font-semibold rounded bg-gray-500 text-white border-gray-900  mt-[2%]`}
           onClick={() => {
             const action = { type: SET_PHIM_SAP_CHIEU };
             dispatch(action);

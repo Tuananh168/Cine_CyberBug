@@ -20,11 +20,8 @@ const Checkout = (props) => {
   );
 
   const { userLogin } = useSelector((state) => state.dangKyTaiKhoanReducer);
-  console.log("userLogin: ", userLogin);
-  console.log("chiTietPhongVe: ", chiTietPhongVe);
 
   const { danhSachGhe, thongTinPhim } = chiTietPhongVe;
-  console.log("thongTinPhim: ", thongTinPhim);
 
   useEffect(() => {
     const action = layChiTietPhongVeAction(params.id);
@@ -187,9 +184,9 @@ const Checkout = (props) => {
                 onClick={() => {
                   thongTinDatVe.maLichChieu = params.id;
                   thongTinDatVe.danhSachVe = danhSachGheDangDat;
-                  console.log("thong tin dat ve", thongTinDatVe);
 
                   dispatch(datVe(thongTinDatVe));
+                  dispatch(layChiTietPhongVeAction(params.id));
                 }}
                 className="inline-block px-6 py-2.5 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full mb-3 my-5"
                 type="button"

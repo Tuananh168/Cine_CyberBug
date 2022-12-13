@@ -2,10 +2,38 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
 import _ from "lodash";
-import { Drawer, Space, Tabs } from "antd";
+import { Drawer, Space, Tabs, Dropdown } from "antd";
 import { ACCESSTOKEN, USER_LOGIN } from "../../utils/setting/Config";
 import Register from "../../page/register/Register";
 import Login from "../../page/login/Login";
+import { DownOutlined, LogoutOutlined } from "@ant-design/icons";
+
+const items = [
+  {
+    label: <NavLink>Thông tin cá nhân</NavLink>,
+    key: "0",
+  },
+  {
+    label: (
+      <NavLink
+        onClick={() => {
+          localStorage.removeItem(USER_LOGIN);
+          localStorage.removeItem(ACCESSTOKEN);
+        }}
+        to="/"
+      >
+        <LogoutOutlined />
+        <p
+          className="ml-2 mt-2 flex items-center"
+          style={{ display: "inline" }}
+        >
+          Đăng xuất
+        </p>
+      </NavLink>
+    ),
+    key: "1",
+  },
+];
 
 const Header = () => {
   const navigate = useNavigate();
@@ -22,22 +50,18 @@ const Header = () => {
       );
     }
     return (
-      <div>
-        <button to="/profile">
-          <div className="h-[40px] w-[40px] rounded-full bg-yellow-500 text-2xl text-center mr-1">
-            {userLogin.taiKhoan.substr(0, 1)}
-          </div>
-          Hello ! {userLogin.taiKhoan}
-        </button>
-        <button
-          onClick={() => {
-            localStorage.removeItem(USER_LOGIN);
-            localStorage.removeItem(ACCESSTOKEN);
-          }}
-        >
-          Đăng xuất
-        </button>
-      </div>
+      <Dropdown
+        menu={{
+          items,
+        }}
+      >
+        <a onClick={(e) => e.preventDefault()}>
+          <Space>
+            Xin chào {userLogin.taiKhoan}
+            <DownOutlined />
+          </Space>
+        </a>
+      </Dropdown>
     );
   };
 
@@ -79,24 +103,20 @@ const Header = () => {
                 to="/"
                 className="flex items-center px-4 -mb-1 dark:border-transparent text-white text-xl hover:text-orange-500"
               >
-                Home
+                Trang Chủ
               </NavLink>
             </li>
             <li className="flex">
-              <button
-                onClick={() => navigate("/contact")}
-                className="flex items-center px-4 -mb-1 dark:border-transparent text-white text-xl hover:text-orange-500"
-              >
-                Contact
+              <button className="flex items-center px-4 -mb-1 dark:border-transparent text-white text-xl hover:text-orange-500">
+                Liên hệ
               </button>
             </li>
             <li className="flex">
               <NavLink
                 rel="noopener noreferrer"
-                to="/user"
                 className="flex items-center px-4 -mb-1 dark:border-transparent text-white text-xl hover:text-orange-500"
               >
-                News
+                Tin tức
               </NavLink>
             </li>
           </ul>

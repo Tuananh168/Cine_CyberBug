@@ -16,10 +16,8 @@ const DetailFilm = () => {
 
   const dispatch = useDispatch();
   const params = useParams();
-  console.log("params: ", params);
 
   const { filmDetail } = useSelector((state) => state.QuanLyRapReducer);
-  console.log("filmDetail: ", filmDetail);
 
   useEffect(() => {
     dispatch(layThongTinChiTietPhim(params.id));
